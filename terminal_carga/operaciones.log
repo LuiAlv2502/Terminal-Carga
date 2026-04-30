@@ -1,0 +1,56 @@
+=== LOG DE OPERACIONES – Terminal de Carga ===
+
+
+=== SIMULACIÓN FIFO ===
+[357.140] Camion #00 | Perecedero   | Estado: CREADO → NUEVO
+[357.140] Camion #00 | Perecedero   | Estado: NUEVO → LISTO
+[357.140] Camion #00 | Perecedero   | Estado: LISTO → EJECUCION
+[357.140] Camion #00 | Perecedero   | FIFO: cargando 3 unidades completas
+[357.240] Camion #01 | Industrial   | Estado: CREADO → NUEVO
+[357.240] Camion #01 | Industrial   | Estado: NUEVO → LISTO
+[357.240] Camion #01 | Industrial   | Estado: LISTO → EJECUCION
+[357.241] Camion #01 | Industrial   | FIFO: cargando 5 unidades completas
+[357.340] Camion #02 | General      | Estado: CREADO → NUEVO
+[357.340] Camion #02 | General      | Estado: NUEVO → LISTO
+[357.341] Camion #02 | General      | Estado: LISTO → EJECUCION
+[357.341] Camion #02 | General      | FIFO: cargando 2 unidades completas
+[357.440] Camion #03 | Perecedero   | Estado: CREADO → NUEVO
+[357.441] Camion #03 | Perecedero   | Estado: NUEVO → LISTO
+[357.540] Camion #04 | General      | Estado: CREADO → NUEVO
+[357.541] Camion #04 | General      | Estado: NUEVO → LISTO
+[357.641] Camion #05 | Industrial   | Estado: CREADO → NUEVO
+[357.641] Camion #05 | Industrial   | Estado: NUEVO → LISTO
+[357.741] Camion #06 | Perecedero   | Estado: CREADO → NUEVO
+[357.741] Camion #06 | Perecedero   | Estado: NUEVO → LISTO
+[357.841] Camion #07 | Industrial   | Estado: CREADO → NUEVO
+[357.841] Camion #07 | Industrial   | Estado: NUEVO → LISTO
+[357.941] Camion #08 | General      | Estado: CREADO → NUEVO
+[357.941] Camion #08 | General      | Estado: NUEVO → LISTO
+[358.041] Camion #09 | Perecedero   | Estado: CREADO → NUEVO
+[358.041] Camion #09 | Perecedero   | Estado: NUEVO → LISTO
+[359.342] Camion #02 | General      | Estado: EJECUCION → TERMINADO
+[359.342] Camion #03 | Perecedero   | Estado: LISTO → EJECUCION
+[359.342] Camion #03 | Perecedero   | FIFO: cargando 4 unidades completas
+[360.140] Camion #00 | Perecedero   | Estado: EJECUCION → TERMINADO
+[360.148] Camion #06 | Perecedero   | Estado: LISTO → EJECUCION
+[360.150] Camion #06 | Perecedero   | FIFO: cargando 3 unidades completas
+[362.241] Camion #01 | Industrial   | Estado: EJECUCION → TERMINADO
+[362.241] Camion #09 | Perecedero   | Estado: LISTO → EJECUCION
+[362.246] Camion #09 | Perecedero   | FIFO: cargando 4 unidades completas
+[363.151] Camion #06 | Perecedero   | Estado: EJECUCION → TERMINADO
+[363.151] Camion #05 | Industrial   | Estado: LISTO → EJECUCION
+[363.151] Camion #05 | Industrial   | FIFO: cargando 6 unidades completas
+[363.342] Camion #03 | Perecedero   | Estado: EJECUCION → TERMINADO
+[363.342] Camion #07 | Industrial   | Estado: LISTO → EJECUCION
+[363.343] Camion #07 | Industrial   | FIFO: cargando 5 unidades completas
+[366.247] Camion #09 | Perecedero   | Estado: EJECUCION → TERMINADO
+[366.247] Camion #04 | General      | Estado: LISTO → EJECUCION
+[366.247] Camion #04 | General      | FIFO: cargando 1 unidades completas
+[367.248] Camion #04 | General      | Estado: EJECUCION → TERMINADO
+[367.248] Camion #08 | General      | Estado: LISTO → EJECUCION
+[367.248] Camion #08 | General      | FIFO: cargando 2 unidades completas
+[368.343] Camion #07 | Industrial   | Estado: EJECUCION → TERMINADO
+[369.152] Camion #05 | Industrial   | Estado: EJECUCION → TERMINADO
+[369.248] Camion #08 | General      | Estado: EJECUCION → TERMINADO
+
+[RESUMEN FIFO] T.Espera promedio=3.75 | T.Retorno promedio=7.25
