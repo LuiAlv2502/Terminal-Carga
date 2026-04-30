@@ -16,3 +16,5 @@ $(TARGET): $(OBJS)
 
 clean:
 	rm -f $(OBJS) $(TARGET) operaciones.log
+
+.PHONY: clean
