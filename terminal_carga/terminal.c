@@ -2,9 +2,6 @@
 #include "planificador.h"
 #include "estadisticas.h"
  
-/* ─────────────────────────────────────────────
-   Variables globales compartidas
-   ───────────────────────────────────────────── */
 sem_t           sem_muelles;
 pthread_mutex_t mutex_log    = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t mutex_cola   = PTHREAD_MUTEX_INITIALIZER;
@@ -21,9 +18,6 @@ const char *nombre_carga[] = {
     "Perecedero", "Industrial", "General"
 };
  
-/* ─────────────────────────────────────────────
-   Tiempo en segundos de alta resolución
-   ───────────────────────────────────────────── */
 double tiempo_actual(void)
 {
     struct timespec ts;
@@ -31,9 +25,6 @@ double tiempo_actual(void)
     return ts.tv_sec + ts.tv_nsec / 1e9;
 }
  
-/* ─────────────────────────────────────────────
-   Log de operaciones (protegido por mutex)
-   ───────────────────────────────────────────── */
 void log_evento(int id_camion, const char *evento)
 {
     pthread_mutex_lock(&mutex_estado);
@@ -64,9 +55,6 @@ void log_evento(int id_camion, const char *evento)
     pthread_mutex_unlock(&mutex_log);
 }
  
-/* ─────────────────────────────────────────────
-   Cambio de estado con reporte
-   ───────────────────────────────────────────── */
 void cambiar_estado(int id, EstadoHilo nuevo)
 {
     pthread_mutex_lock(&mutex_estado);
@@ -80,9 +68,6 @@ void cambiar_estado(int id, EstadoHilo nuevo)
     log_evento(id, msg);
 }
  
-/* ─────────────────────────────────────────────
-   Ejecutar una simulación completa
-   ───────────────────────────────────────────── */
 void ejecutar_simulacion(Algoritmo algo, int n_camiones)
 {
     algoritmo_actual = algo;

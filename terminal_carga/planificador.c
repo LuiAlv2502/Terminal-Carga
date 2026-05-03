@@ -1,9 +1,6 @@
 #include "planificador.h"
 #include "cola.h"
- 
-/* ─────────────────────────────────────────────
-   Variables globales del planificador
-   ───────────────────────────────────────────── */
+
 pthread_mutex_t mutex_planif = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t  cond_planif  = PTHREAD_COND_INITIALIZER;
 pthread_cond_t  cond_camion[MAX_CAMIONES];
@@ -11,9 +8,7 @@ int             seleccionado[MAX_CAMIONES];
 int             camiones_activos = 0;
 Algoritmo       algoritmo_actual = PROCESO_FIFO;
  
-/* ─────────────────────────────────────────────
-   Hilo planificador dedicado
-   ───────────────────────────────────────────── */
+
 void *hilo_planificador(void *arg)
 {
     (void)arg;
@@ -49,10 +44,7 @@ void *hilo_planificador(void *arg)
     }
     return NULL;
 }
- 
-/* ─────────────────────────────────────────────
-   Función del hilo de cada camión
-   ───────────────────────────────────────────── */
+
 void *hilo_camion(void *arg)
 {
     Camion *c = (Camion *)arg;
