@@ -82,6 +82,3 @@ En este proyecto se tomaron las siguientes medidas para prevenirlo:
 4. mutex_log y mutex_estado son de uso breve y no anidado: se toman y liberan dentro de secciones críticas
    pequeñas, reduciendo la ventana de tiempo en que un hilo retiene el recurso.
 
-5. Sin recursos no compartibles problemáticos: cada camión (hilo) tiene su propia estructura Camion en
-   memoria; los únicos recursos compartidos son los muelles (semáforo) y las estructuras de cola/log
-   (mutex), todos con orden de adquisición definido.
