@@ -18,8 +18,6 @@ static void mostrar_menu(void)
 
 int main(void)
 {
-
-    /* Abrir archivo de log compartido */
     archivo_log = fopen(LOG_FILE, "w");
     if (!archivo_log) {
         perror("Error al abrir archivo de log");
@@ -49,16 +47,14 @@ int main(void)
             break;
 
         case 3:
-            /* ── FIFO primero ── */
+        
             ejecutar_simulacion(PROCESO_FIFO, n_camiones);
 
             printf("\n\n══════ Preparando segunda corrida con Round Robin ══════\n");
             sleep(1);
 
-            /* ── Luego Round Robin ── */
             ejecutar_simulacion(PROCESO_RR, n_camiones);
 
-            /* ── Tabla comparativa final ── */
             printf("\n");
             printf("╔══════════════════════════════════════════════════════════╗\n");
             printf("║           COMPARACIÓN FINAL DE ALGORITMOS               ║\n");

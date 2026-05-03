@@ -3,9 +3,6 @@
  
 #define MAX_CAMIONES 20
  
-/* ─────────────────────────────────────────────
-   Cola de planificación (lista circular)
-   ───────────────────────────────────────────── */
 typedef struct {
     int ids[MAX_CAMIONES];
     int frente;
@@ -20,10 +17,4 @@ void cola_encolar(Cola *c, int id);
 int  cola_desencolar(Cola *c);
 int  cola_vacia(Cola *c);
  
-/*
- * Requiere la definición completa de Camion.
- * Se declara en terminal.h (después de definir Camion)
- * para evitar dependencia circular.
- */
- 
-#endif /* COLA_H */
+#endif

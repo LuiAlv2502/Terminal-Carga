@@ -11,16 +11,10 @@
  
 #include "cola.h"
  
-/* ─────────────────────────────────────────────
-   Configuración general
-   ───────────────────────────────────────────── */
 #define NUM_MUELLES  3
 #define QUANTUM_RR   2
 #define LOG_FILE     "operaciones.log"
  
-/* ─────────────────────────────────────────────
-   Estados del hilo (ciclo de vida)
-   ───────────────────────────────────────────── */
 typedef enum {
     ESTADO_CREADO    = 0,
     ESTADO_NUEVO     = 1,
@@ -32,9 +26,6 @@ typedef enum {
  
 extern const char *nombre_estado[];
  
-/* ─────────────────────────────────────────────
-   Tipos de carga (afectan prioridad)
-   ───────────────────────────────────────────── */
 typedef enum {
     CARGA_PERECEDERO = 0,
     CARGA_INDUSTRIAL = 1,
@@ -43,17 +34,11 @@ typedef enum {
  
 extern const char *nombre_carga[];
  
-/* ─────────────────────────────────────────────
-   Algoritmos de planificación
-   ───────────────────────────────────────────── */
 typedef enum {
     PROCESO_FIFO = 0,
     PROCESO_RR   = 1
 } Algoritmo;
  
-/* ─────────────────────────────────────────────
-   Parámetros de cada camión / hilo
-   ───────────────────────────────────────────── */
 struct Camion {
     int        id;
     TipoCarga  tipo_carga;
@@ -73,9 +58,6 @@ struct Camion {
  
 typedef struct Camion Camion;
  
-/* ─────────────────────────────────────────────
-   Variables globales (definidas en terminal.c)
-   ───────────────────────────────────────────── */
 extern sem_t           sem_muelles;
 extern pthread_mutex_t mutex_log;
 extern pthread_mutex_t mutex_cola;
@@ -87,12 +69,9 @@ extern int             total_camiones;
 /* Declarada aquí (no en cola.h) porque necesita Camion completo */
 int cola_desencolar_prioridad(Cola *c, Camion camiones[]);
  
-/* ─────────────────────────────────────────────
-   Funciones de terminal.c
-   ───────────────────────────────────────────── */
 double tiempo_actual(void);
 void   log_evento(int id_camion, const char *evento);
 void   cambiar_estado(int id, EstadoHilo nuevo);
 void   ejecutar_simulacion(Algoritmo algo, int n_camiones);
  
-#endif /* TERMINAL_H */
+#endif
