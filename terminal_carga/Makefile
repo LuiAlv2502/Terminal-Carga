@@ -1,10 +1,10 @@
 CC      = gcc
 CFLAGS  = -Wall -Wextra -pthread -g
 TARGET  = terminal_carga
-SRCS    = main.c terminal.c
+SRCS    = main.c terminal.c planificador.c cola.c estadisticas.c
 OBJS    = $(SRCS:.c=.o)
 
-.PHONY: all clean
+.PHONY: all clean re
 
 all: $(TARGET)
 
@@ -17,4 +17,4 @@ $(TARGET): $(OBJS)
 clean:
 	rm -f $(OBJS) $(TARGET) operaciones.log
 
-.PHONY: clean
+re: clean all
