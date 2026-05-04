@@ -6,3 +6,11 @@ terminal_carga/*.o
 
 # Log files
 terminal_carga/operaciones.log
+
+*.o
+*.a
+*.so
+*.dll
+*.exe
+build/
+Debug/
