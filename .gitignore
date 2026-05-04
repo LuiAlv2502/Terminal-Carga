@@ -1,0 +1,8 @@
+# Compiled binary
+terminal_carga/terminal_carga
+
+# Object files
+terminal_carga/*.o
+
+# Log files
+terminal_carga/operaciones.log
